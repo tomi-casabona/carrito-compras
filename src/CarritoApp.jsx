@@ -1,10 +1,17 @@
+import { Routes } from "react-router-dom";
+import { NavBar } from "./components/navbar";
 
 function CarritoApp() {
-
   return (
-   <h1>Carrrito</h1>
-      
-  )
+    <>
+      <NavBar />
+      <Routes>
+        {/* <Route path="/" element={}></Route>
+        <Route path="/carrito" element={} ></Route>
+        <Route path="/*" element={<Navigate to="/" />}></Route> */}
+      </Routes>
+    </>
+  );
 }
 
-export default CarritoApp
+export default CarritoApp;
