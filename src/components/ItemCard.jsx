@@ -2,6 +2,14 @@ import { useState } from "react";
 
 export const ItemCard = ({ imagen, titulo, descripcion, precio }) => {
   const [added, setAdded] = useState(false);
+
+const OnClickAdd = () => {
+    setAdded(true)
+} 
+const onClickRemove = () => {
+    setAdded(false)
+}
+
   return (
     <div className="card mb-3 ">
       <div className="row ">
@@ -20,11 +28,11 @@ export const ItemCard = ({ imagen, titulo, descripcion, precio }) => {
             <p className="card-text">{descripcion}</p>
             <p className="card-text fw-bolder fs-5">${precio}</p>
             {added ? (
-              <button type="button" className="btn btn-danger">
+              <button onClick={onClickRemove} type="button" className="btn btn-danger">
                 Quitar
               </button>
             ) : (
-              <button type="button" className="btn btn-success">
+              <button type="button" className="btn btn-success" onClick={OnClickAdd}>
                 {" "}
                 Agregar
               </button>
