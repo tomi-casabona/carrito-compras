@@ -1,15 +1,19 @@
-import { Routes } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
 import { NavBar } from "./components/navbar";
+import { ComprasPage } from "./pages/ComprasPage";
+import { CarritoPage } from "./pages/CarritoPage";
 
 function CarritoApp() {
   return (
     <>
       <NavBar />
-      <Routes>
-        {/* <Route path="/" element={}></Route>
-        <Route path="/carrito" element={} ></Route>
-        <Route path="/*" element={<Navigate to="/" />}></Route> */}
-      </Routes>
+      <div className="container">
+        <Routes>
+          <Route path="/" element={<ComprasPage />}></Route>
+          <Route path="/carrito" element={<CarritoPage />}></Route>
+          <Route path="/*" element={<Navigate to="/" />}></Route>
+        </Routes>
+      </div>
     </>
   );
 }
