@@ -7,8 +7,6 @@ export const ItemCard = ({
   precio,
   handleAgregar,
   handleQuitar,
-  handleAumentar,
-  handleDisminuir,
 }) => {
   const [added, setAdded] = useState(false);
 
@@ -25,7 +23,11 @@ export const ItemCard = ({
     <div className="card mb-3 ">
       <div className="row g-0">
         <div className="col-3">
-          <img src={imagen} alt={titulo} className="img-fluid p-4" />
+          <img
+            src={imagen}
+            alt={titulo}
+            className="img-fluid p-4 mx-auto"
+          />
         </div>
         <div className="col-sm-9">
           <div className="card-body">
