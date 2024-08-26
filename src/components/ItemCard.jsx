@@ -20,40 +20,38 @@ export const ItemCard = ({
   };
 
   return (
-    <div className="card mb-3 ">
-      <div className="row g-0">
-        <div className="col-3">
-          <img
-            src={imagen}
-            alt={titulo}
-            className="img-fluid p-4 mx-auto"
-          />
-        </div>
-        <div className="col-sm-9">
-          <div className="card-body">
-            <h5 className="card-title">{titulo}</h5>
-            <p className="card-text">{descripcion}</p>
-            <p className="card-text fw-bolder fs-5">${precio}</p>
-            {added ? (
-              <button
-                onClick={onClickRemove}
-                type="button"
-                className="btn btn-danger"
-              >
-                Quitar
-              </button>
-            ) : (
-              <button
-                type="button"
-                className="btn btn-success"
-                onClick={OnClickAdd}
-              >
-                {" "}
-                Agregar
-              </button>
-            )}
-          </div>
-        </div>
+    <div className="card flex-fill d-flex flex-column m-1 p-1">
+      <div className="text-center mx-auto mb-3">
+        <img
+          src={imagen}
+          alt={titulo}
+          className="card-img-top "
+          style={{ maxWidth: "100%", maxHeight: "200px", height: "auto" }}
+        />
+      </div>
+      <div className="card-body flex-grow-1">
+        <h5>{titulo}</h5>
+        <p>{descripcion}</p>
+        <p className="text-end fw-bolder fs-3 ">${precio}</p>
+      </div>
+      <div className="card-footer mt-auto">
+        {added ? (
+          <button
+            onClick={onClickRemove}
+            type="button"
+            className="btn btn-danger w-100"
+          >
+            Quitar
+          </button>
+        ) : (
+          <button
+            type="button"
+            className="btn btn-success w-100"
+            onClick={OnClickAdd}
+          >
+            Agregar
+          </button>
+        )}
       </div>
     </div>
   );
